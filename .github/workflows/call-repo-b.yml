@@ -1,0 +1,17 @@
+name: Chamar workflow do repo B
+
+on:
+  workflow_dispatch:
+    inputs:
+      arg1:
+        description: "Argumento para enviar ao script do repo B"
+        required: false
+        type: string
+
+jobs:
+  call-reusable-workflow:
+    # Chama o workflow reutilizável do repo B
+    uses: ORG/REPO-B/.github/workflows/run-script.yml@main
+    with:
+      arg1: ${{ inputs.arg1 }}
+
