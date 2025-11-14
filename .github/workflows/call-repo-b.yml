@@ -1,11 +1,23 @@
-name: Chamar workflow do repo B
+name: Chamar Workflow do Repo B
 
 on:
   workflow_dispatch:
     inputs:
-      arg1:
-        description: "Argumento para enviar ao script do repo B"
-        required: false
+      param1:
+        description: "Primeiro parâmetro"
+        required: true
+        type: string
+      param2:
+        description: "Segundo parâmetro"
+        required: true
+        type: string
+      param3:
+        description: "Terceiro parâmetro"
+        required: true
+        type: string
+      param4:
+        description: "Quarto parâmetro"
+        required: true
         type: string
 
 jobs:
@@ -13,5 +25,7 @@ jobs:
     # Chama o workflow reutilizável do repo B
     uses: julianogaliacco/platform/.github/workflows/run-script.yml@main
     with:
-      arg1: ${{ inputs.arg1 }}
-
+      param1: ${{ inputs.param1 }}
+      param2: ${{ inputs.param2 }}
+      param3: ${{ inputs.param3 }}
+      param4: ${{ inputs.param4 }}
