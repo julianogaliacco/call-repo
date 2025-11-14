@@ -11,7 +11,7 @@ on:
 jobs:
   call-reusable-workflow:
     # Chama o workflow reutilizável do repo B
-    uses: ORG/REPO-B/.github/workflows/run-script.yml@main
+    uses: julianogaliacco/platform/.github/workflows/run-script.yml@main
     with:
       arg1: ${{ inputs.arg1 }}
 
